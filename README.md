@@ -26,5 +26,7 @@ An example (with somewhat pointless data from the image processing toolbox):
 
     underlay = imread('cameraman.tif'); %256x256 greyscale image of a man with a camera
     overlay = imread('circles.png'); %256x256 binary image of circles
-    do_Overlay(underlay, overlay); %256x256 RGB image of a man with a camera in B&W with an overlaid set of discs randomly: 
+    overlay = imfilter(double(overlay),fspecial('gaussian',8,20)); %Blur circles 
+    do_Overlay(underlay, overlay); 
+    %256x256 RGB image of a man with a camera in B&W with an overlaid set of discs:
     
