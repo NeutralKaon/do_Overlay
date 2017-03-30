@@ -22,4 +22,9 @@ Options are parsed as a struct with a set of sensible defaults, and can contain:
     videoName = a unique string -- filename 
     overlayString  -- text to write on each video frame 
 
+An example (with somewhat pointless data from the image processing toolbox): 
 
+    underlay = imread('cameraman.tif'); %256x256 greyscale image of a man with a camera
+    overlay = imread('circles.png'); %256x256 binary image of circles
+    do_Overlay(underlay, overlay); %256x256 RGB image of a man with a camera in B&W with an overlaid set of discs randomly: 
+    
