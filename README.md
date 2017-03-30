@@ -4,6 +4,7 @@ Often, one wants to overlay one image on top of another in Matlab. This is inevi
 
 Options are parsed as a struct with a set of sensible defaults, and can contain: 
 
+```
     hfig -- figure handle for overlay window 
     hax -- axis handle (blank is fine) 
     do_normslice = 1 -- normalise each slice 
@@ -21,12 +22,16 @@ Options are parsed as a struct with a set of sensible defaults, and can contain:
     saveVideo = false -- set to true to save a video 
     videoName = a unique string -- filename 
     overlayString  -- text to write on each video frame 
+```
 
 An example (with somewhat pointless data from the image processing toolbox): 
 
+```matlab
     underlay = imread('cameraman.tif'); %256x256 greyscale image of a man with a camera
     overlay = imread('circles.png'); %256x256 binary image of circles
     overlay = imfilter(double(overlay),fspecial('gaussian',8,20)); %Blur circles 
     do_Overlay(underlay, overlay); 
     %256x256 RGB image of a man with a camera in B&W with an overlaid set of discs:
-    
+```
+
+![Example overlay image](https://cloud.githubusercontent.com/assets/18312003/24526178/20f272fa-1595-11e7-9d7f-4c80592addc5.png)
